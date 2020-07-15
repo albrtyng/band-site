@@ -6,7 +6,7 @@
   }
 }
 @mixin tablet {
-  @media screen and (max-width: $tablet-break) {
+  @media screen and (min-width: $mobile-break + 1) and (max-width: $tablet-break) {
     @content;
   }
 }
