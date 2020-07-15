@@ -1,16 +1,19 @@
 @font-face {
-  font-family: "Avenir";
+  font-family: "AvenirNext";
   src: local("Avenir Next Regular");
+  font-weight: 100;
 }
 
 @font-face {
-  font-family: "AvenirDemi";
+  font-family: "AvenirNext";
   src: local("Avenir Next Demi Bold");
+  font-weight: 300;
 }
 
 @font-face {
-  font-family: "AvenirBold";
+  font-family: "AvenirNext";
   src: local("Avenir Next Bold");
+  font-weight: 500;
 }
 
 body {
@@ -63,7 +66,8 @@ li {
 }
 
 .title-bar__nav-link {
-  font-family: "AvenirDemi";
+  font-family: "AvenirNext";
+  font-weight: 300;
   color: #afafaf;
   font-size: 0.875rem;
   height: 1.375rem;
@@ -75,6 +79,32 @@ li {
 .title-bar__nav-link--selected {
   color: white;
   border-bottom: 3px solid white;
+}
+
+.hero {
+  position: relative;
+  height: 183px;
+  overflow: hidden;
+}
+
+.hero__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.hero__title {
+  position: absolute;
+  height: auto;
+  top: 30%;
+  color: white;
+  font-family: "AvenirNext";
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding: 0 16px;
+  margin: 0;
+  width: 75%;
 }
 
 .about {
@@ -92,19 +122,21 @@ li {
 }
 
 .about__title {
-  font-family: "AvenirBold";
+  font-family: "AvenirNext";
+  font-weight: 500;
   color: #323232;
   font-size: 1.5rem;
   line-height: 2rem;
-  margin: 24px 0;
+  margin: 32px 0 24px 0;
 }
 
 .about__img {
-  width: 18rem;
+  width: 100%;
 }
 
 .about__quote, .about__subheading {
-  font-family: "AvenirDemi";
+  font-family: "AvenirNext";
+  font-weight: 300;
   color: #323232;
   font-size: 16px;
   line-height: 22px;
@@ -112,15 +144,17 @@ li {
 }
 
 .about__author {
-  margin-top: 8px;
-  font-family: "AvenirDemi";
+  margin-top: 32px;
+  font-family: "AvenirNext";
+  font-weight: 300;
   color: #323232;
   font-size: 14px;
   margin-bottom: 16px;
 }
 
 .about__description {
-  font-family: "Avenir";
+  font-family: "AvenirNext";
+  font-weight: 100;
   font-size: 12px;
   line-height: 18px;
   margin: 24px 0 40px 0;
@@ -148,7 +182,8 @@ li {
 .gallery__title {
   margin-top: 32px;
   margin-bottom: 8px;
-  font-family: "AvenirBold";
+  font-family: "AvenirNext";
+  font-weight: 500;
   color: #323232;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -168,12 +203,13 @@ li {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #323232;
-  padding: 0 12px;
+  padding: 0 12px 40px 12px;
 }
 
 .info__title {
   margin-top: 40px;
-  font-family: "AvenirDemi";
+  font-family: "AvenirNext";
+  font-weight: 500;
   color: white;
   font-size: 2rem;
   line-height: 2rem;
@@ -188,5 +224,38 @@ li {
           justify-content: space-between;
   margin-left: 4px;
   width: calc(50% - 16px);
+}
+
+.info-card {
+  margin-top: 32px;
+}
+
+.info-card__name, .info-card__org {
+  color: white;
+  font-family: "AvenirNext";
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 22px;
+  margin: 0;
+}
+
+.info-card__org {
+  margin-bottom: 1rem;
+}
+
+.info-card__addr, .info-card__pos, .info-card__copyright {
+  color: white;
+  font-family: "AvenirNext";
+  font-weight: 100;
+  font-size: 12px;
+  margin: 0;
+}
+
+.info-card__email {
+  color: white;
+  font-family: "AvenirNext";
+  font-weight: 100;
+  font-size: 12px;
+  margin: 1rem 0 0 0;
 }
 /*# sourceMappingURL=main.css.map */
