@@ -5,3 +5,13 @@
     @content;
   }
 }
+@mixin tablet {
+  @media screen and (max-width: $tablet-break) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (max-width: $desktop-break) {
+    @content;
+  }
+}
