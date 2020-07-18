@@ -6,3 +6,28 @@ $black: #323232;
 $silver: #afafaf;
 $mercury: #e1e1e1;
 $alabaster: #fafafa;
+
+@font-face {
+  font-family: "AvenirNext";
+  src: local("Avenir Next Regular");
+  src: url("../4.0 - Assets/_Global Font/\
+AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf")
+    format("opentype");
+  font-weight: 100;
+};
+@font-face {
+  font-family: "AvenirNext";
+  src: local("Avenir Next Demi Bold");
+  src: url("../4.0 - Assets/_Global Font/\
+AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf")
+    format("opentype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: local("Avenir Next Bold");
+  src: url("../4.0 - Assets/_Global Font/\
+AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.otf")
+    format("opentype");
+  font-weight: 500;
+}

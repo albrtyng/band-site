@@ -1,30 +1,5 @@
 @import "./partials/mixins";
 
-@font-face {
-  font-family: "AvenirNext";
-  src: local("Avenir Next Regular");
-  src: url("../4.0 - Assets/_Global Font/\
-AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf")
-    format("opentype");
-  font-weight: 100;
-};
-@font-face {
-  font-family: "AvenirNext";
-  src: local("Avenir Next Demi Bold");
-  src: url("../4.0 - Assets/_Global Font/\
-AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf")
-    format("opentype");
-  font-weight: 300;
-}
-@font-face {
-  font-family: "AvenirNext";
-  src: local("Avenir Next Bold");
-  src: url("../4.0 - Assets/_Global Font/\
-AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.otf")
-    format("opentype");
-  font-weight: 500;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -37,17 +12,17 @@ li {
 }
 
 main {
-  margin-top: 80px;
+  margin-top: 5rem;
 }
 
 .title-bar {
+  @include flex($ai: center, $bx: border-box);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
-  display: flex;
   background-color: $black;
-  width: 100vw;
+  width: 100%;
   height: 80px;
 
   @include mobile {
@@ -55,22 +30,26 @@ main {
   }
 
   @include tablet {
-    padding: 0 24px;
-    align-items: center;
+    padding: 0 1.5rem;
   }
 
   @include desktop {
-    padding: 0 150px;
-    align-items: center;
+    padding: 0 9.375rem;
   }
 
   &__logo {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
+    @include flex(center);
+
+    @include mobile {
+      padding: 1rem 0;
+    }
+
+    @include tablet {
+      padding: 0 3.5rem 0 0;
+    }
 
     @include desktop {
-      margin: 0 56px 0 0;
+      padding: 0 3.5rem 0 0;
     }
   }
 
@@ -78,43 +57,28 @@ main {
     display: flex;
     width: 100%;
     height: 100%;
-
-    @include tablet {
-      flex-grow: 1;
-    }
-
-    @include desktop {
-      flex-grow: 1;
-    }
+    flex-grow: 1;
   }
 
   &__nav-link {
-    font-family: "AvenirNext";
-    font-weight: 300;
-    color: $silver;
-    font-size: 0.875rem;
-    height: 1.375rem;
-    width: 50%;
-    text-align: center;
+    @include font-styling(300, $silver);
+    @include flex(center, center, border-box);
     text-decoration: none;
+    font-size: 0.875rem;
+
+    @include mobile{
+      height: 100%;
+      width: 50%;
+    }
 
     @include tablet {
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      width: 72px;
+      width: 4.5rem;
+      margin: 0 3.5rem 0 0.75rem;
     }
 
     @include desktop {
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 80px;
-      height: 100%;
-      margin: 0 56px 0 12px;
+      width: 5rem;
+      margin: 0 3.5rem 0 0.75rem;
     }
 
     &--selected {    
@@ -125,56 +89,43 @@ main {
 }
 
 .hero {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+  @include flex(flex-start, center);
   background-image: url("../4.0 - Assets/Images/josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
   background-size: cover;
 
   @include mobile {
-    height: 183px;
+    height: calc(.57*(100vw));
   }
 
   @include tablet {
-    height: 400px;
+    height: calc(.52*(100vw));
   }
 
   @include desktop {
-    height: 670px;
+    height: calc(.56*(100vw));
   }
 
   &__title {
-    color: white;
-    margin: 0;
-    font-family: "AvenirNext";
-    font-weight: 500;
-    width: 75%;
+    @include font-styling(500, white);
+    width: 576px;
 
     @include mobile {
-      font-size: 1.5rem;
-      line-height: 2rem;
-      padding: 0 16px;
+      @include format-text(2rem, 0 1rem, 1.5rem);
+      width: 75%; 
     }
 
     @include tablet {
-      font-size: 60px;
-      line-height: 68px;
-      padding: 0 24px;
+      @include format-text(4.25rem, 0 1.5rem, 3.75rem);
     }
 
     @include desktop {
-      font-size: 60px;
-      line-height: 68px;
-      padding: 0 150px;
-      width: 50%;
+      @include format-text(4.25rem, 0 9.375rem, 3.75rem);
     }
   }
 }
 
-
 .about {
-  display: flex;
-  flex-direction: column;
+  @include flex($jc: center, $fd: column);
 
   @include mobile {
     padding: 0 1rem;
@@ -189,302 +140,212 @@ main {
   }
 
   &__title {
-    font-family: "AvenirNext";
-    font-weight: 500;
-    color: $black;
+    @include font-styling(500);
     width: 100%;
 
     @include mobile {
-      font-size: 1.5rem;
-      line-height: 2rem;
-      margin: 32px 0 24px 0;
+      @include format-text(2rem, 2rem 0 1.5rem 0, 1.5rem);
     }
 
     @include tablet {
-      font-size: 36px;
-      line-height: 44px;
-      margin: 48px 0 32px 0;
+      @include format-text(2.75rem, 3rem 0 2rem 0, 2.25rem);
     }
 
     @include desktop {
-      font-size: 36px;
-      line-height: 44px;
-      margin: 48px 0;
+      @include format-text(2.75rem, 3rem 0, 2.25rem);
     }
   }
 
   &__img {
     object-fit: cover;
-    flex-grow: 1;
-    height: 450px;
     object-position: 50% 60%;
 
+    @include mobile {
+      height: calc(.625*(100vw - 2rem));
+    }
+
+    @include tablet {
+      height: calc(.625*(100vw - 3rem));
+    }
+
     @include desktop {
-      margin: 0 56px;
+      height: calc(.625*(100vw - 25.75rem));
+      margin: 0 3.5rem;
     }
   }
 
   &__quote, &__subheading {
-    font-family: "AvenirNext";
-    font-weight: 300;
-    color: $black;
+    @include font-styling(500);
 
     @include mobile {
-      font-size: 16px;
-      line-height: 22px;
-      margin: 24px 0 0 0;
+      font-weight: 300;
+      @include format-text(1.375rem, 1.5rem 0 0 0);
     }
 
     @include tablet {
-      font-size: 24px;
-      font-weight: 500;
-      line-height: 32px;
-      margin: 36px 0 0 0;
+      @include format-text(2rem, 2.25rem 0 0 0, 1.5rem);
     }
 
     @include desktop {
-      font-size: 24px;
-      font-weight: 500;
-      line-height: 32px;
-      margin: 48px 56px 0 56px;
+      @include format-text(2rem, 3rem 3.5rem 0 3.5rem, 1.5rem);
     }
   }
 
   &__author {
-    font-family: "AvenirNext";
-    font-weight: 300;
-    color: $black;
+    @include font-styling(300, black);
 
     @include mobile {
-      font-size: 14px;
-      margin-top: 32px;
-      margin-bottom: 16px;
+      @include format-text(1.25rem, 2rem 0 1rem 0, 0.875rem);
     }
 
     @include tablet {
-      font-size: 14px;
-      margin: 36px 0 0 0;
+      @include format-text(1.25rem, 2.25rem 0 0 0, 0.875rem);
     }
 
     @include desktop {
-      font-size: 16px;
-      line-height: 24px;
-      margin: 40px 56px 0 56px;
+      @include format-text(1.5rem, 2.5rem 3.5rem 0 3.5rem);
     }
   }
 
   &__descriptions {
-    display: flex;
-  
+    @include flex(space-between);
+
     @include mobile {
       flex-direction: column;
-      margin: 0 0 40px 0;
+      margin: 0 0 2.5rem 0;
     }
 
     @include tablet {
-      margin: 24px 0 36px 0;
-      & :first-child {
-        margin-right: 24px;
-      }
+      margin: 1.5rem 0 2.25rem 0;
     }
 
     @include desktop {
-      margin: 32px 56px 48px 56px;
-      & :first-child {
-        margin-right: 40px;
-      }
+      margin: 2rem 3.5rem 3rem 3.5rem;
     }
   }
 
   &__description {
-    font-family: "AvenirNext";
-    font-weight: 100;
-    margin: 0;
+    @include font-styling(100, $black);
+    @include format-text(1.25rem, 0, 0.875rem);
 
     @include mobile {
-      font-size: 12px;
-      line-height: 18px;
-      margin-top: 24px;
+      @include format-text(1.125rem, 1.5rem 0 0 0, 0.75rem);
     }
 
     @include tablet {
-      width: 345px;
-      font-size: 14px;
-      line-height: 20px;
+      width: calc((100% - 1.5rem)/2);
     }
 
     @include desktop {
-      width: 420px;
-      font-size: 14px;
-      line-height: 20px;
+      width: calc((100% - 2.5rem)/2);
     }
   }
 }
 
 .gallery {
+  @include flex($bx: border-box, $fd: column);
   background-color: $alabaster;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
   width: 100%;
 
   @include mobile {
-    padding: 0 1rem 40px 1rem;
-    margin-bottom: 40px;
+    padding: 0 1rem 2.5rem 1rem;
   }
 
   @include tablet {
-    padding: 0 1.5rem 40px 1.5rem;
+    padding: 0 1.5rem 2.5rem 1.5rem;
   }
 
   @include desktop {
-    padding: 0 9.375rem 40px 9.375rem;
+    padding: 0 9.375rem 2.5rem 9.375rem;
   }
 
   &__title {
-    font-family: "AvenirNext";
-    font-weight: 500;
-    color: $black;
-    
+    @include font-styling(500);
+
     @include mobile {
-      margin-top: 32px;
-      margin-bottom: 8px;
-      font-size: 1.5rem;
-      line-height: 2rem;
+      @include format-text(2rem, 2rem 0 0.5rem 0, 1.5rem);
     }
 
     @include tablet {
-      font-size: 36px;
-      line-height: 44px;
-      margin: 48px 0 32px 0;
+      @include format-text(2.75rem, 3rem 0 2rem 0, 2.25rem);
     }
 
     @include desktop {
-      font-size: 36px;
-      line-height: 44px;
-      margin: 48px 0 42px 0;
+      @include format-text(2.75rem, 3rem 0 2.625rem 0, 2.25rem);
     }
   }
 
   &__imgs {
-    display: flex;
-
-    @include mobile {
-      flex-direction: column;
-    }
-
-    @include tablet {
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    @include desktop {
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
+    @include flex($jc: space-between, $fw: wrap);
   }
 
   &__img {
+    width: calc((100% - 3rem) /3);
+    height: calc((100% - 4.5rem) /3);
+    margin-top: 1.5rem;
+
     @include mobile {
-      width: 18rem;
+      width: 100%;
       margin-top: 1rem;
-    }
-
-    @include tablet {
-      width: 224px;
-      height: 126px;
-      margin-top: 1.5rem;
-    }
-
-    @include desktop {
-      width: calc((100% - 48px) /3);
-      margin-top: 24px;
     }
   }
 }
 
 .info {
-  display: flex;
-  flex-wrap: wrap;
+  @include flex($fw: wrap);
   background-color: $black;
 
   @include mobile {
     flex-direction: column;
-    padding: 0 12px 40px 12px;
+    padding: 0 0.75rem 2.5rem 0.75rem;
   }
 
   @include tablet {
-    padding: 0 24px;
+    padding: 0 1.5rem;
   }
 
   @include desktop {
-    padding: 0 150px;
+    padding: 0 9.375rem;
   }
 
   &__first-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex($jc: space-between, $ai: center);
+    margin: 3rem 0;
     width: 100%;
 
     @include mobile {
-      margin: 32px 0;
+      margin: 2rem 0;
       flex-wrap: wrap;
-    }
-
-    @include tablet {
-      margin: 48px 0;
-    }
-
-    @include desktop {
-      margin: 48px 0;
     }
   }
 
   &__title {
-    font-family: "AvenirNext";
-    font-weight: 500;
-    color: white;
-    margin: 0;
+    @include font-styling(500, white);
+    width: 14rem;
 
     @include mobile {
-      font-size: 2rem;
-      line-height: 2rem;
-      margin-bottom: 24px;
+      @include format-text(2rem, 0 0 1.5rem, 2rem);
       width: 100%;
     }
 
     @include tablet {
-      font-size: 36px;
-      line-height: 44px;
-      width: 224px;
-      margin-right: 24px;
+      @include format-text(2.75rem, 0 1.5rem 0 0, 2.25rem);
     }
 
     @include desktop {
-      font-size: 36px;
-      line-height: 44px;
-      width: 224px;
-      margin-right: 56px;
+      @include format-text(2.75rem, 0 3.5rem 0 0, 2.25rem);
     }
   }
 
   &__icons {
-    display: flex;
-    align-items: center;
-  
+    @include flex($ai: center);
+    flex-grow: 1;
+
     @include mobile {
-      margin-left: 4px;
-      width: calc(50% - 32px);
+      margin-left: 0.25rem;
+      width: 128px;
       justify-content: space-between;
-    }
-
-    @include tablet {
-      flex-grow: 1;
-    }
-
-    @include desktop {
-      flex-grow: 1;
+      flex-grow: 0;
     }
   }
 
@@ -493,12 +354,11 @@ main {
     height: 20px;
 
     @include tablet {
-      padding-left: 24px;
-      padding-right: 12px;
+      padding: 0 0.75rem 0 1.5rem;
     }
 
     @include desktop {
-      padding-right: 32px;
+      padding-right: 2rem;
     }
   }
 
@@ -510,60 +370,36 @@ main {
 }
 
 .contact-cards {
-  display: flex;
+  @include flex(space-between);
+  width: 100%;
 
   @include mobile {
     flex-direction: column;
   }
-
-  @include tablet {
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  @include desktop {
-    justify-content: space-between;
-    width: 100%;
-
-    & :last-child {
-      flex-grow: 1;
-    }
-  }
 }
 
 .contact-card {
-  @include mobile {
-    margin-bottom: 32px;
-  }
+  width: 14rem;
 
-  @include tablet {
-    width: 224px;
+  @include mobile {
+    width: 100%;
+    margin-bottom: 2rem;
   }
 
   @include desktop {
-    width: 224px;
-    margin-right: 56px;
+    margin-right: 3.5rem;
+    
+    &--right {
+      flex-grow: 1;
+    }
   }
 
   &__name, &__org {
-    color: white;
-    font-family: "AvenirNext";
-    font-weight: 300;
-    margin: 0;
+    @include font-styling(300, white);
+    @include format-text(1.5rem, 0);
 
     @include mobile {
-      font-size: 13px;
-      line-height: 22px;
-    }
-
-    @include tablet {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-
-    @include desktop {
-      font-size: 1rem;
-      line-height: 1.5rem;
+      @include format-text(1.375, 0, 0.8125rem);
     }
   }
 
@@ -571,52 +407,33 @@ main {
     margin-bottom: 1rem;
 
     @include desktop {
-      margin-bottom: 24px;
+      margin-bottom: 1.5rem;
     }
   }
 
   &__addr, &__pos {
-    color: white;
-    font-family: "AvenirNext";
-    font-weight: 100;
-    margin: 0;
+    @include font-styling(100, white);
+    @include format-text(1.25rem, 0, 0.875rem);
 
     @include mobile {
-      font-size: 12px;
-      line-height: 18px;
-    }
-    
-    @include tablet {
-      font-size: 14px;
-      line-height: 20px;
-    }
-
-    @include desktop {
-      font-size: 14x;
-      line-height: 20px;
+      font-size: 0.75rem;
+      line-height: 1.125rem;
     }
   }
 
   &__email {
-    color: white;
-    font-family: "AvenirNext";
-    font-weight: 100;
-
+    @include font-styling(100, white);
   
     @include mobile {
-      font-size: 12px;
-      margin: 1rem 0 0 0;
+      @include format-text(1.25rem, 1rem 0 0 0, 0.75rem);
     }
 
     @include tablet {
-      font-size: 14px;
-      line-height: 20px;
+      @include format-text(1.25rem, 1.5rem 0 0 0, 0.875rem);
     }
 
     @include desktop {
-      font-size: 16px;
-      line-height: 24px;
-      margin: 1.5rem 0 0 0;
+      @include format-text(1.5rem, 1.5rem 0 0 0);
     }
   }
 }
@@ -629,27 +446,19 @@ main {
   }
 
   @include tablet {
-    margin: 36px 0;
+    margin: 2.25rem 0;
   }
 
   @include desktop {
-    margin: 40px 0;
+    margin: 2.5rem 0;
   }
 
   &__text {
-    color: white;
-    font-family: "AvenirNext";
-    font-weight: 100;
-    margin: 0;
+    @include font-styling(100, white);
+    @include format-text(1.25rem, 0, 0.875rem);
 
     @include mobile {
-      font-size: 12px;
-      line-height: 18px;
-    }
-
-    @include tablet {
-      font-size: 14px;
-      line-height: 20px;
+      @include format-text(1.125rem, 0, 0.75rem);
     }
   }
 }
