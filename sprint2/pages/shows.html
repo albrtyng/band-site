@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/pages/shows.css" />
   <title>BANDSITE</title>
 </head>
 <body>
@@ -31,5 +32,87 @@
       </nav>
     </div>
   </header>
+
+  <main>
+    <section class="shero">
+      <h2 class="shero__album">
+        Woman Worldwide Album
+      </h2>
+      <h1 class="shero__title">
+        Waters of Nazareth x We Are your Friends x Phantom
+      </h1>
+      <iframe
+        class="shero__soundcloud"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//\
+        api.soundcloud.com/tracks/781672477&color=%23ff5500&\
+        auto_play=false&hide_related=true&show_comments=false&\
+        show_user=true&show_reposts=false&show_teaser=false">
+      </iframe>
+    </section>
+
+    <section class="shows">
+      <h2 class="shows__title">Shows</h2>
+      <div class="shows__list">
+        <!-- Populated using ../js/shows.js -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="info">
+    <div class="info__first-row">
+      <h2 class="info__title">Get In Touch</h2>
+      <div class="info__icons">
+        <img
+          class="info__icon"
+          src="../4.0 - Assets/Icons/SVG/Icon-instagram.svg"
+          alt="An Instagram icon" />
+        <img
+          class="info__icon"
+          src="../4.0 - Assets/Icons/SVG/Icon-facebook.svg"
+          alt="A Facebook icon" />
+        <img
+          class="info__icon"
+          src="../4.0 - Assets/Icons/SVG/Icon-twitter.svg"
+          alt="A Twitter icon" />
+      </div>
+      <img
+        class="info__logo"
+        src="../4.0 - Assets/Logo/Logo-bandsite.svg"
+        alt="The bandsite logo" />
+    </div>
+
+    <div class="contact-cards">
+      <div class="contact-card">
+        <h2 class="contact-card__name">Richard Rovner</h2>
+        <h2 class="contact-card__org">The Bees Knees Management</h2>
+        <p class="contact-card__addr">460 King Street West</p>
+        <p class="contact-card__addr">Toronto, Ontario M5V 1L7</p>
+        <p class="contact-card__email">info@thebeesknees.com</p>
+      </div>
+      <div class="contact-card">
+        <h2 class="contact-card__name">Marsha Vlasic</h2>
+        <h2 class="contact-card__org">Artist Group International</h2>
+        <p class="contact-card__pos">Booking Agent for</p>
+        <p class="contact-card__pos">US / South America / Japan</p>
+        <p class="contact-card__email">marsha.vlasic@artistgrp.com</p>
+      </div>
+      <div class="contact-card contact-card--right">
+        <h2 class="contact-card__name">Russel Warby</h2>
+        <h2 class="contact-card__org">William Morrir Entertainment</h2>
+        <p class="contact-card__pos">Booking Agent for</p>
+        <p class="contact-card__pos">UK / EU / AU</p>
+        <p class="contact-card__email">RLW@wmeentertainment.com</p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p class="copyright__text">Copyright The Bees Knees &copy; 2018 &nbsp;</p>
+      <p class="copyright__text">All Rights Reserved</p>
+    </div>
+  </footer>
+  <script src='../js/shows.js'></script>
 </body>
 </html>
