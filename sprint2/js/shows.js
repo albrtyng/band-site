@@ -47,32 +47,53 @@ const createElement = (elementType, className, content = '', src = '') => {
   return element;
 }
 
-const generateShows = () => {
+const generateShows = (mode = 'mobile') => {
   const showContainer = document.querySelector('.shows__list');
   showContainer.innerHTML = '';
+
+  let dateLabel = venueLabel = locationLabel = null;
+  if (mode === 'tablet') {
+    const labels = createElement('div', 'labels');
+    dateLabel = createElement('h3',
+      'show-card__label show-card__label--date', 'Dates');
+    venueLabel = createElement('h3',
+      'show-card__label show-card__label--venue', 'Venue');
+    locationLabel = createElement('h3',
+      'show-card__label show-card__label--location', 'Location');
+
+    labels.appendChild(dateLabel);
+    labels.appendChild(venueLabel);
+    labels.appendChild(locationLabel);
+
+    showContainer.appendChild(labels);
+  }
+
   showsArray.forEach(show => {
-    const dateLabel = createElement('h3',
-      'show-card__label', 'Date');
+    if (mode === 'mobile') {
+      dateLabel = createElement('h3',
+        'show-card__label show-card__label--date', 'Date');
+      venueLabel = createElement('h3',
+        'show-card__label show-card__label--venue', 'Venue');
+      locationLabel = createElement('h3',
+        'show-card__label show-card__label--location', 'Location');
+    }
+
     const date = createElement('h3',
       'show-card__date', show.date);
-    const venueLabel = createElement('h3',
-      'show-card__label', 'Venue');
     const venue = createElement('p',
       'show-card__text', show.venue);
-    const locationLabel = createElement('h3',
-      'show-card__label', 'Location');
     const location = createElement('p',
       'show-card__text', show.location);
     const button = createElement('button',
       'btn btn--ticket', 'Buy Tickets');
-  
+
     const showCard = createElement('div', 'show-card');
-    
-    showCard.appendChild(dateLabel);
+
+    if (dateLabel && mode === 'mobile') showCard.appendChild(dateLabel);
     showCard.appendChild(date);
-    showCard.appendChild(venueLabel);
+    if (venueLabel && mode === 'mobile') showCard.appendChild(venueLabel);
     showCard.appendChild(venue);
-    showCard.appendChild(locationLabel);
+    if (locationLabel && mode === 'mobile') showCard.appendChild(locationLabel);
     showCard.appendChild(location);
     showCard.appendChild(button);
 
@@ -80,4 +101,42 @@ const generateShows = () => {
   });
 }
 
-document.addEventListener('DOMContentLoaded', generateShows);
+const mobile = window.matchMedia(
+  ('(max-width: $tablet-break - 1)')
+);
+
+const tablet = window.matchMedia(
+  '(min-width: 768px) and (max-width: 1199px)'
+);
+
+const desktop = window.matchMedia(
+  '(min-width: 1200px)'
+)
+
+mobile.addListener(screen => {
+  if (screen.matches) {
+    generateShows();
+  }
+});
+
+tablet.addListener(screen => {
+  if (screen.matches) {
+    generateShows('tablet');
+  }
+});
+
+desktop.addListener((screen) => {
+  if (screen.matches) {
+    generateShows('desktop');
+  }
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (tablet.matches) {
+    generateShows('tablet');
+  } else if (desktop.matches) {
+    generateShows('desktop');
+  } else {
+    generateShows();
+  }
+});

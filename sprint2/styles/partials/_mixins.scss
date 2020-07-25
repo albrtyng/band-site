@@ -29,7 +29,7 @@
   font-weight: $fw;
   color: $c;
 }
-@mixin format-text($lh, $m, $fs: 1rem) {
+@mixin format-text($lh, $m: 0, $fs: 1rem) {
   font-size: $fs;
   line-height: $lh;
   margin: $m;
