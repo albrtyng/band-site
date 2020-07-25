@@ -52,7 +52,7 @@ const generateShows = (mode = 'mobile') => {
   showContainer.innerHTML = '';
 
   let dateLabel = venueLabel = locationLabel = null;
-  if (mode === 'tablet') {
+  if (mode === 'tablet' || mode === 'desktop') {
     const labels = createElement('div', 'labels');
     dateLabel = createElement('h3',
       'show-card__label show-card__label--date', 'Dates');
@@ -110,7 +110,7 @@ const tablet = window.matchMedia(
 );
 
 const desktop = window.matchMedia(
-  '(min-width: 1200px)'
+  '(min-width: 1200px) and (max-width: 1450px)'
 )
 
 mobile.addListener(screen => {

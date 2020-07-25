@@ -499,7 +499,11 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
       @include format-text(2rem, 2rem 0 2.5rem 0, 1.5rem);
     }
 
-    @include tablet{
+    @include tablet {
+      @include format-text(2.75rem, 3rem 0, 2.25rem);
+    }
+
+    @include desktop {
       @include format-text(2.75rem, 3rem 0, 2.25rem);
     }
   }
@@ -520,11 +524,12 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
 }
 
 .comment {
-  box-sizing: border-box;
+  @include flex($jc: flex-end, $ai: flex-start,
+  $fw: wrap, $bx: border-box);
   border-top: 1px solid $mercury;
   border-bottom: 1px solid $mercury;
   width: 100%;
-  @include flex($jc: flex-end, $ai: flex-start, $fw: wrap);
+  
   margin: -1px 0 0 0;
 
   @include mobile {
@@ -532,6 +537,10 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
   }
 
   @include tablet {
+    padding: 1.5rem 0;
+  }
+
+  @include desktop {
     padding: 1.5rem 0;
   }
 
@@ -568,6 +577,12 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
       flex-grow: 1;
       margin-left: 12px;
     }
+
+    @include desktop {
+      @include format-text(1.5rem);
+      flex-grow: 1;
+      margin-left: 12px;
+    }
   }
 
   &__text {
@@ -583,6 +598,10 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
   padding-bottom: 2.0625rem;
 
   @include tablet {
+    justify-content: flex-end;
+  }
+
+  @include desktop {
     justify-content: flex-end;
   }
 
@@ -631,6 +650,10 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
       width: 100%;
     }
 
+    @include desktop {
+      width: 100%;
+    }
+
     &::placeholder {
       color: $silver
     }
@@ -658,6 +681,11 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
   }
 
   @include tablet {
+    height: 3rem;
+    width: 12rem;
+  }
+
+  @include desktop {
     height: 3rem;
     width: 12rem;
   }

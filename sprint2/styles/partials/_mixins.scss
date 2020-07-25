@@ -17,7 +17,8 @@
 }
 @mixin desktop {
   @media screen
-  and (min-width: $desktop-break) {
+  and (min-width: $desktop-break)
+  and (max-width: $desktop-break + 250) {
     @content;
   }
 }

@@ -10,7 +10,6 @@
   url("../../4.0 - Assets/Images/\
 josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
   background-size: cover;
-  
 
   @include mobile {
     height: 472px;
@@ -23,9 +22,15 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
     padding: 6rem 1.5rem 4rem 1.5rem;
   }
 
-  // @include desktop {
-  //   height: calc(.56*(100vw));
-  // }
+  @include desktop {
+    @include flex($ai: flex-start, $fw: wrap, $bx: border-box);
+    height: 670px;
+    padding: 10rem 9.375rem 0 9.375rem;
+  }
+
+  &__inner {
+    @include flex($fw: wrap, $ai: flex-end, $jc: space-between);
+  }
 
   &__album {
     @include font-styling(300, white);
@@ -37,7 +42,12 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
 
     @include tablet {
       @include font-styling(500, white);
-      @include format-text($lh: 2rem, $fs: 1.5rem);
+      @include format-text(2rem, $fs: 1.5rem);
+    }
+
+    @include desktop {
+      @include font-styling(500, white);
+      @include format-text(2rem, 0 0 3rem 0, 1.5rem);
     }
   }
 
@@ -45,31 +55,38 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
     @include font-styling(500, white);
 
     @include mobile {
-      @include format-text($lh: 2.75rem, $fs: 2.25rem);
+      @include format-text(2.75rem, $fs: 2.25rem);
       width: 100%;
     }
 
     @include tablet {
-      @include format-text($lh: 4.25rem, $fs: 3.75rem);
+      @include format-text(4.25rem, $fs: 3.75rem);
       width: 80%;
     }
 
-    // @include desktop {
-    //   @include format-text(4.25rem, 0 9.375rem, 3.75rem);
-    // }
+    @include desktop {
+      @include format-text(3.75rem, $fs: 3rem);
+      width: 450px;
+      margin-bottom: -.8rem;
+    }
   }
 
   &__soundcloud {
 
     @include mobile {
       width: 100%;
-      height: 115px;
+      height: 7.1875rem;
       margin-top: 1.5rem;
     }
 
     @include tablet {
       width: 60%;
-      height: 145px;
+      height: 9.125rem;
+    }
+
+    @include desktop {
+      width: 45%;
+      height: 9.125rem;
     }
   }
 }
@@ -81,6 +98,11 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
     padding: 0 1.5rem;
   }
 
+  @include desktop {
+    @include flex($jc: space-between);
+    padding: 0 9.375rem;
+  }
+
   &__title {
     @include font-styling(500);
     @include format-text(2rem, 1.5rem 0 2.5rem 0, 1.5rem);
@@ -88,11 +110,20 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
     @include tablet {
       @include format-text(2.75rem, 3.5rem 0 3rem 0, 2.25rem)
     }
+
+    @include desktop {
+      @include format-text(2.75rem, 3rem 0, 2.25rem)
+    }
   }
 
   &__list {
     @include flex($fw: wrap);
     margin-bottom: 1rem;
+    
+    @include desktop {
+      width: 45rem;
+      margin-top: 24px;
+    }
   }
 }
 
@@ -107,6 +138,12 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
     height: 5rem;
   }
 
+  @include desktop {
+    @include flex($ai: center, $jc: space-between);
+    height: 5rem;
+    width: 45rem;
+  }
+
   &__label {
     @include font-styling(300, $silver);
     @include format-text($lh: 1.125rem, $fs: 0.8125rem);
@@ -118,10 +155,18 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
       @include tablet {
         width: 224px;
       }
+
+      @include desktop {
+        width: 224px;
+      }
     }
 
     &--venue, &--location {
       @include tablet {
+        width: 148px;
+      }
+
+      @include desktop {
         width: 148px;
       }
     }
@@ -135,13 +180,23 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
       @include format-text(1.5rem);
       width: 224px;
     }
+
+    @include desktop {
+      @include format-text(1.5rem);
+      width: 224px;
+    }
   }
 
   &__text {
     @include font-styling(100);
     @include format-text(1.25rem, 1rem 0 1.5rem 0, 0.875rem);
-    
+
     @include tablet {
+      @include format-text($lh: 1.5rem);
+      width: 148px;
+    }
+
+    @include desktop {
       @include format-text($lh: 1.5rem);
       width: 148px;
     }
@@ -149,15 +204,17 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
 }
 
 .labels {
-  @include tablet {
-    @include flex($ai: center, $jc: space-between);
-    height: 5rem;
-    width: 100%;
-    margin: 0;
+  @include flex($ai: center, $jc: space-between);
+  height: 5rem;
+  width: 100%;
+  margin: 0;
 
-    & :last-child {
-      margin-right: 200px;
-      flex-grow: 1;
+  & :last-child {
+    margin-right: 200px;
+    flex-grow: 1;
+
+    @include desktop {
+      margin-right: 125px;
     }
   }
 }
