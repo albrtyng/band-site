@@ -47,7 +47,7 @@ const generateComments = () => {
     const text = createElement('p',
       'comment__text', commentsArray[i].text);
     const img = createElement('img',
-      'comment__pfp', src=commentsArray[i].img);
+      'comment__pfp', '', commentsArray[i].img);
   
     const commentCard = createElement('div', 'comment');
   
@@ -75,9 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
       author: e.target.name.value,
       timestamp: getDateString(new Date()),
       text: e.target.comment.value,
-      img: ''
+      img: 'assets/Images/daniil.jpeg'
     });
 
+    e.target.comment.value = ''; // Clear the comment after posting, but keep name
     generateComments();
   });
 });

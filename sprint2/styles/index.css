@@ -730,6 +730,7 @@
   border-radius: 4px;
   margin-bottom: 1rem;
   margin-left: 1rem;
+  padding: 0.75rem;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
