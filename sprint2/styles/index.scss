@@ -1,107 +1,15 @@
 @import "./partials/mixins";
 @import "./partials/animations";
 
-body {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  width: 100vw;
-}
 
-li {
-  list-style-type: none;
-}
-
-main {
-  margin-top: 5rem;
-}
-
-.title-bar {
-  @include flex($ai: center, $bx: border-box);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  background-color: $black;
-  width: 100%;
-  height: 80px;
-
-  @include mobile {
-    flex-direction: column;
-  }
-
-  @include tablet {
-    padding: 0 1.5rem;
-  }
-
-  @include desktop {
-    padding: 0 9.375rem;
-  }
-
-  &__logo {
-    @include scale-logo;
-    display: inline-block;
-
-    @include mobile {
-      padding: 1rem 0;
-    }
-
-    @include tablet {
-      padding: 0 3.5rem 0 0;
-    }
-
-    @include desktop {
-      padding: 0 3.5rem 0 0;
-    }
-  }
-
-  &__nav {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-grow: 1;
-  }
-
-  &__nav-link {
-    @include font-styling(300, $silver);
-    @include flex(center, center, border-box);
-    text-decoration: none;
-    border-bottom: 3px solid $black;
-    font-size: 0.875rem;
-
-    @include mobile {
-      height: 100%;
-      width: 50%;
-    }
-
-    @include tablet {
-      width: 4.5rem;
-      margin: 0 3.5rem 0 0.75rem;
-    }
-
-    @include desktop {
-      width: 5rem;
-      margin: 0 3.5rem 0 0.75rem;
-    }
-
-    &--selected {    
-      color: white;
-      border-bottom: 3px solid white;
-    }
-
-    &:hover {
-      color: white;
-    }
-  }
-}
-
+// Styling of the hero
 .hero {
   @include flex(flex-start, center);
   background-image: linear-gradient(
     rgba(50, 50, 50, 0.5),
     rgba(50, 50, 50, 0.5)
-  ),
-  url("../4.0 - Assets/Images/\
+  ), // #323232 equivalent in rgba
+  url("../assets/Images/\
 josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
   background-size: cover;
 
@@ -119,7 +27,7 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
 
   &__title {
     @include font-styling(500, white);
-    width: 576px;
+    width: 36rem;
 
     @include mobile {
       @include format-text(2rem, 0 1rem, 1.5rem);
@@ -136,6 +44,8 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
   }
 }
 
+
+// The about section, image, quote, etc
 .about {
   @include flex($jc: center, $fd: column);
 
@@ -254,6 +164,8 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
   }
 }
 
+
+// Styling the gallery of concert photos
 .gallery {
   @include flex($bx: border-box, $fd: column);
   background-color: $alabaster;
@@ -305,178 +217,8 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
   }
 }
 
-.info {
-  @include flex($fw: wrap);
-  background-color: $black;
 
-  @include mobile {
-    flex-direction: column;
-    padding: 0 0.75rem 2.5rem 0.75rem;
-  }
-
-  @include tablet {
-    padding: 0 1.5rem;
-  }
-
-  @include desktop {
-    padding: 0 9.375rem;
-  }
-
-  &__first-row {
-    @include flex($jc: space-between, $ai: center);
-    margin: 3rem 0;
-    width: 100%;
-
-    @include mobile {
-      margin: 2rem 0;
-      flex-wrap: wrap;
-    }
-  }
-
-  &__title {
-    @include font-styling(500, white);
-    width: 14rem;
-
-    @include mobile {
-      @include format-text(2rem, 0 0 1.5rem, 2rem);
-      width: 100%;
-    }
-
-    @include tablet {
-      @include format-text(2.75rem, 0 1.5rem 0 0, 2.25rem);
-    }
-
-    @include desktop {
-      @include format-text(2.75rem, 0 3.5rem 0 0, 2.25rem);
-    }
-  }
-
-  &__icons {
-    @include flex($ai: center);
-    flex-grow: 1;
-
-    @include mobile {
-      margin-left: 0.25rem;
-      width: 128px;
-      justify-content: space-between;
-      flex-grow: 0;
-    }
-  }
-
-  &__icon {
-    width: 20px;
-    height: 20px;
-
-    @include tablet {
-      padding: 0 0.75rem 0 1.5rem;
-    }
-
-    @include desktop {
-      padding-right: 2rem;
-    }
-  }
-
-  &__logo {
-    @include mobile {
-      display: none;
-    }
-  }
-}
-
-.contact-cards {
-  @include flex(space-between);
-  width: 100%;
-
-  @include mobile {
-    flex-direction: column;
-  }
-}
-
-.contact-card {
-  width: 14rem;
-
-  @include mobile {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  @include desktop {
-    margin-right: 3.5rem;
-    
-    &--right {
-      flex-grow: 1;
-    }
-  }
-
-  &__name, &__org {
-    @include font-styling(300, white);
-    @include format-text(1.5rem, 0);
-
-    @include mobile {
-      @include format-text($lh: 1.375, $fs: 0.8125rem);
-    }
-  }
-
-  &__org {
-    margin-bottom: 1rem;
-
-    @include desktop {
-      margin-bottom: 1.5rem;
-    }
-  }
-
-  &__addr, &__pos {
-    @include font-styling(100, white);
-    @include format-text($lh: 1.25rem, $fs: 0.875rem);
-
-    @include mobile {
-      font-size: 0.75rem;
-      line-height: 1.125rem;
-    }
-  }
-
-  &__email {
-    @include font-styling(100, white);
-  
-    @include mobile {
-      @include format-text(1.25rem, 1rem 0 0 0, 0.75rem);
-    }
-
-    @include tablet {
-      @include format-text(1.25rem, 1.5rem 0 0 0, 0.875rem);
-    }
-
-    @include desktop {
-      @include format-text(1.5rem, 1.5rem 0 0 0);
-    }
-  }
-}
-
-.copyright {
-  display: flex;
-  
-  @include mobile {
-    flex-wrap: wrap;
-  }
-
-  @include tablet {
-    margin: 2.25rem 0;
-  }
-
-  @include desktop {
-    margin: 2.5rem 0;
-  }
-
-  &__text {
-    @include font-styling(100, white);
-    @include format-text($lh: 1.25rem, $fs: 0.875rem);
-
-    @include mobile {
-      @include format-text($lh: 1.125rem, $fs: 0.75rem);
-    }
-  }
-}
-
+// Styling the comments section
 .comments {
   @include flex($jc: center, $fw: wrap);
   @include mobile {
@@ -523,6 +265,8 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
   }
 }
 
+
+// Styling an individual comment within the commcent section
 .comment {
   @include flex($jc: flex-end, $ai: flex-start,
   $fw: wrap, $bx: border-box);
@@ -592,6 +336,8 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
   }
 }
 
+
+// Styling the form used to post a comment
 .com-form {
   @include flex($fw: wrap);
   margin: 0;
@@ -662,59 +408,5 @@ josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
   &__name:focus, &__comment:focus {
     outline: none !important;
     border: 2px solid $black;
-  }
-}
-
-.btn {
-  @include font-styling(300, white);
-  display: block;
-  border: none;
-  border-radius: 4px;
-  text-transform: uppercase;
-  padding: 0;
-
-  @include mobile {
-    height: 3rem;
-    min-width: 14rem;
-    margin-left: 4rem;
-    flex-grow: 1;
-  }
-
-  @include tablet {
-    height: 3rem;
-    width: 12rem;
-  }
-
-  @include desktop {
-    height: 3rem;
-    width: 12rem;
-  }
-
-  &--comment {
-    background-color: $black;
-
-    &:hover {
-      background-color: black;
-    }
-  }
-
-  &--ticket {
-    background-color: $black;
-
-    @include mobile {
-      height: 3rem;
-      width: 100%;
-      margin: .5rem 0 1rem 0;
-    }
-
-    @include tablet {
-      height: 3rem;
-      width: 10rem;
-      margin-left: calc(100% - 42.5rem);
-    }
-
-    &:hover {
-      background-color: black;
-    }
   }
 }

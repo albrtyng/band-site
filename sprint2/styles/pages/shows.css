@@ -1,25 +1,25 @@
 @font-face {
   font-family: "AvenirNext";
   src: local("Avenir Next Regular");
-  src: url("../../4.0 - Assets/_Global Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("../../assets/_Global Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: 100;
 }
 
 @font-face {
   font-family: "AvenirNext";
   src: local("Avenir Next Demi Bold");
-  src: url("../../4.0 - Assets/_Global Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../../assets/_Global Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 300;
 }
 
 @font-face {
   font-family: "AvenirNext";
   src: local("Avenir Next Bold");
-  src: url("../../4.0 - Assets/_Global Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/_Global Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: 500;
 }
 
-.shero {
+.hero {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,20 +37,22 @@
           flex-direction: column;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.5)), to(rgba(50, 50, 50, 0.5))), url("../../4.0 - Assets/Images/josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../../4.0 - Assets/Images/josh-sorenson-LVmyjS0hxYU-unsplash.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.5)), to(rgba(50, 50, 50, 0.5))), url("../../assets/images/efe-kurnaz-RnCPiXixooY-unsplash.jpg");
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../../assets/images/efe-kurnaz-RnCPiXixooY-unsplash.jpg");
   background-size: cover;
+  background-position: center;
+  height: 41.875rem;
 }
 
 @media screen and (max-width: 767px) {
-  .shero {
-    height: 472px;
+  .hero {
+    height: 29.5rem;
     padding: 4rem 1rem 0 1rem;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .shero {
+  .hero {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -68,13 +70,12 @@
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    height: 670px;
     padding: 6rem 1.5rem 4rem 1.5rem;
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1450px) {
-  .shero {
+@media screen and (min-width: 1200px) {
+  .hero {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -92,12 +93,11 @@
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    height: 670px;
     padding: 10rem 9.375rem 0 9.375rem;
   }
 }
 
-.shero__inner {
+.hero__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,15 +117,18 @@
       flex-wrap: wrap;
 }
 
-.shero__album {
+.hero__album {
   font-family: "AvenirNext";
-  font-weight: 300;
+  font-weight: 500;
   color: white;
   width: 100%;
 }
 
 @media screen and (max-width: 767px) {
-  .shero__album {
+  .hero__album {
+    font-family: "AvenirNext";
+    font-weight: 300;
+    color: white;
     font-size: 0.875rem;
     line-height: 1.375rem;
     margin: 0 0 1.5rem 0;
@@ -133,35 +136,29 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .shero__album {
-    font-family: "AvenirNext";
-    font-weight: 500;
-    color: white;
+  .hero__album {
     font-size: 1.5rem;
     line-height: 2rem;
     margin: 0;
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1450px) {
-  .shero__album {
-    font-family: "AvenirNext";
-    font-weight: 500;
-    color: white;
+@media screen and (min-width: 1200px) {
+  .hero__album {
     font-size: 1.5rem;
     line-height: 2rem;
     margin: 0 0 3rem 0;
   }
 }
 
-.shero__title {
+.hero__title {
   font-family: "AvenirNext";
   font-weight: 500;
   color: white;
 }
 
 @media screen and (max-width: 767px) {
-  .shero__title {
+  .hero__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
     margin: 0;
@@ -170,7 +167,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .shero__title {
+  .hero__title {
     font-size: 3.75rem;
     line-height: 4.25rem;
     margin: 0;
@@ -178,18 +175,22 @@
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1450px) {
-  .shero__title {
+@media screen and (min-width: 1200px) {
+  .hero__title {
     font-size: 3rem;
     line-height: 3.75rem;
     margin: 0;
-    width: 450px;
+    width: 28.125rem;
     margin-bottom: -.8rem;
   }
 }
 
+.hero__soundcloud {
+  height: 9.125rem;
+}
+
 @media screen and (max-width: 767px) {
-  .shero__soundcloud {
+  .hero__soundcloud {
     width: 100%;
     height: 7.1875rem;
     margin-top: 1.5rem;
@@ -197,16 +198,14 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .shero__soundcloud {
+  .hero__soundcloud {
     width: 60%;
-    height: 9.125rem;
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1450px) {
-  .shero__soundcloud {
+@media screen and (min-width: 1200px) {
+  .hero__soundcloud {
     width: 45%;
-    height: 9.125rem;
   }
 }
 
@@ -220,7 +219,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1450px) {
+@media screen and (min-width: 1200px) {
   .shows {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -260,7 +259,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1450px) {
+@media screen and (min-width: 1200px) {
   .shows__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -289,64 +288,62 @@
   margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1450px) {
+@media screen and (min-width: 1200px) {
   .shows__list {
     width: 45rem;
-    margin-top: 24px;
+    margin-top: 1.5rem;
   }
 }
 
 .show-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   border-bottom: 1px solid #e1e1e1;
   margin-bottom: 2rem;
+  height: 5rem;
   width: 100%;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (max-width: 767px) {
   .show-card {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     -webkit-box-sizing: content-box;
             box-sizing: content-box;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    height: 5rem;
+    height: auto;
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1450px) {
+@media screen and (min-width: 1200px) {
   .show-card {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    height: 5rem;
     width: 45rem;
   }
 }
@@ -364,26 +361,14 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .show-card__label--date {
-    width: 224px;
-  }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1450px) {
-  .show-card__label--date {
-    width: 224px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1199px) {
   .show-card__label--venue, .show-card__label--location {
-    width: 148px;
+    width: 9.25rem;
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1450px) {
+@media screen and (min-width: 1200px) {
   .show-card__label--venue, .show-card__label--location {
-    width: 148px;
+    width: 9.25rem;
   }
 }
 
@@ -391,26 +376,18 @@
   font-family: "AvenirNext";
   font-weight: 300;
   color: #323232;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  margin: 1rem 0 1.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 14rem;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (max-width: 767px) {
   .show-card__date {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    margin: 0;
-    width: 224px;
-  }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1450px) {
-  .show-card__date {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    margin: 0;
-    width: 224px;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    margin: 1rem 0 1.5rem 0;
+    width: 100%;
   }
 }
 
@@ -418,26 +395,18 @@
   font-family: "AvenirNext";
   font-weight: 100;
   color: #323232;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  margin: 1rem 0 1.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 9.25rem;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (max-width: 767px) {
   .show-card__text {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    margin: 0;
-    width: 148px;
-  }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1450px) {
-  .show-card__text {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    margin: 0;
-    width: 148px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin: 1rem 0 1.5rem 0;
+    width: 100%;
   }
 }
 
@@ -465,15 +434,8 @@
 }
 
 .labels :last-child {
-  margin-right: 200px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1450px) {
-  .labels :last-child {
-    margin-right: 125px;
-  }
 }
 /*# sourceMappingURL=shows.css.map */

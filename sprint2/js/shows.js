@@ -1,3 +1,6 @@
+/*
+  The array of show objects
+*/
 const showsArray = [
   {
     date: 'Mon Dec 17 2018',
@@ -31,31 +34,23 @@ const showsArray = [
   },
 ]
 
-const createElement = (elementType, className, content = '', src = '') => {
-  let element = document.createElement(elementType);
-  let classList = className.split(' ');
-  classList.forEach(className => {
-    element.classList.add(className);
-  });
-
-  if (elementType === 'img' && src) {
-    element.setAttribute('src', src);
-  } else {
-    element.innerText = content;
-  }
-
-  return element;
-}
-
+/*
+  Generate show cards based on the above array
+  I could totally do all of this in CSS, but hardcoding a bunch of labels in HTML
+  just to hide them in two of the three screen sizes didn't make sense to me.
+  That's why I went ahead and used a loop and some conditions to generate the show
+  content and labels dynamically.
+*/
 const generateShows = (mode = 'mobile') => {
   const showContainer = document.querySelector('.shows__list');
   showContainer.innerHTML = '';
 
+  // Create labels for top of the list (tablet/desktop)
   let dateLabel = venueLabel = locationLabel = null;
-  if (mode === 'tablet' || mode === 'desktop') {
+  if (mode !== 'mobile') {
     const labels = createElement('div', 'labels');
     dateLabel = createElement('h3',
-      'show-card__label show-card__label--date', 'Dates');
+      'show-card__label', 'Dates');
     venueLabel = createElement('h3',
       'show-card__label show-card__label--venue', 'Venue');
     locationLabel = createElement('h3',
@@ -69,15 +64,16 @@ const generateShows = (mode = 'mobile') => {
   }
 
   showsArray.forEach(show => {
-    if (mode === 'mobile') {
+    if (mode === 'mobile') { // Only create the inner labels when mobile
       dateLabel = createElement('h3',
-        'show-card__label show-card__label--date', 'Date');
+        'show-card__label', 'Date');
       venueLabel = createElement('h3',
         'show-card__label show-card__label--venue', 'Venue');
       locationLabel = createElement('h3',
         'show-card__label show-card__label--location', 'Location');
     }
 
+    // Create date, venue and location info regardless
     const date = createElement('h3',
       'show-card__date', show.date);
     const venue = createElement('p',
@@ -101,18 +97,18 @@ const generateShows = (mode = 'mobile') => {
   });
 }
 
-const mobile = window.matchMedia(
-  ('(max-width: $tablet-break - 1)')
-);
+// Queries media for screen size and generates shows accordingly
+document.addEventListener('DOMContentLoaded', () => {
+  if (tablet.matches) {
+    generateShows('tablet');
+  } else if (desktop.matches) {
+    generateShows('desktop');
+  } else {
+    generateShows();
+  }
+});
 
-const tablet = window.matchMedia(
-  '(min-width: 768px) and (max-width: 1199px)'
-);
-
-const desktop = window.matchMedia(
-  '(min-width: 1200px) and (max-width: 1450px)'
-)
-
+// Add event listeners for the three screen sizes
 mobile.addListener(screen => {
   if (screen.matches) {
     generateShows();
@@ -128,15 +124,5 @@ tablet.addListener(screen => {
 desktop.addListener((screen) => {
   if (screen.matches) {
     generateShows('desktop');
-  }
-})
-
-document.addEventListener('DOMContentLoaded', () => {
-  if (tablet.matches) {
-    generateShows('tablet');
-  } else if (desktop.matches) {
-    generateShows('desktop');
-  } else {
-    generateShows();
   }
 });

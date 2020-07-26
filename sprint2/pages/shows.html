@@ -3,47 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../styles/main.css" />
   <link rel="stylesheet" href="../styles/pages/shows.css" />
+  <link rel="stylesheet" href="../styles/shared.css" />
   <title>BANDSITE</title>
 </head>
 <body>
+
+  <!-- The title bar, including the nav and logo -->
+
   <header>
     <div class="title-bar">
       <a href="../index.html">
         <img
         class="title-bar__logo"
-        src="../4.0 - Assets/Logo/Logo-bandsite.svg"
+        src="../assets/Logo/Logo-bandsite.svg"
         alt="The bandsite logo" />
       </a>
       <nav class="title-bar__nav">
         <a
           class="title-bar__nav-link"
           href="../index.html"
-        >
-          Biography
-        </a>
+        >Biography</a>
         <a
           class="title-bar__nav-link title-bar__nav-link--selected"
           href="shows.html"
-        >
-          Shows
-        </a>
+        >Shows</a>
       </nav>
     </div>
   </header>
 
+
   <main>
-    <section class="shero">
-      <div class="shero__inner">
-        <h2 class="shero__album">
+    <!-- The hero image, soundcloud iframe and album name -->
+    <section class="hero">
+      <div class="hero__inner">
+        <h2 class="hero__album">
           Woman Worldwide Album
         </h2>
-        <h1 class="shero__title">
+        <h1 class="hero__title">
           Waters of Nazareth x We Are your Friends x Phantom
         </h1>
         <iframe
-          class="shero__soundcloud"
+          class="hero__soundcloud"
           scrolling="no"
           frameborder="no"
           allow="autoplay"
@@ -55,13 +56,17 @@
       </div>
     </section>
 
+    <!-- The list of shows happening -->
     <section class="shows">
       <h2 class="shows__title">Shows</h2>
       <div class="shows__list">
         <!-- Populated using ../js/shows.js -->
       </div>
     </section>
+
   </main>
+
+  <!-- The footer, , including various social media and contact links -->
 
   <footer class="info">
     <div class="info__first-row">
@@ -69,24 +74,27 @@
       <div class="info__icons">
         <img
           class="info__icon"
-          src="../4.0 - Assets/Icons/SVG/Icon-instagram.svg"
+          src="../assets/Icons/SVG/Icon-instagram.svg"
           alt="An Instagram icon" />
         <img
           class="info__icon"
-          src="../4.0 - Assets/Icons/SVG/Icon-facebook.svg"
+          src="../assets/Icons/SVG/Icon-facebook.svg"
           alt="A Facebook icon" />
         <img
           class="info__icon"
-          src="../4.0 - Assets/Icons/SVG/Icon-twitter.svg"
+          src="../assets/Icons/SVG/Icon-twitter.svg"
           alt="A Twitter icon" />
       </div>
+
       <img
         class="info__logo"
-        src="../4.0 - Assets/Logo/Logo-bandsite.svg"
+        src="../assets/Logo/Logo-bandsite.svg"
         alt="The bandsite logo" />
     </div>
 
+    <!-- The three main sources of contact -->
     <div class="contact-cards">
+
       <div class="contact-card">
         <h2 class="contact-card__name">Richard Rovner</h2>
         <h2 class="contact-card__org">The Bees Knees Management</h2>
@@ -94,6 +102,7 @@
         <p class="contact-card__addr">Toronto, Ontario M5V 1L7</p>
         <p class="contact-card__email">info@thebeesknees.com</p>
       </div>
+
       <div class="contact-card">
         <h2 class="contact-card__name">Marsha Vlasic</h2>
         <h2 class="contact-card__org">Artist Group International</h2>
@@ -101,6 +110,7 @@
         <p class="contact-card__pos">US / South America / Japan</p>
         <p class="contact-card__email">marsha.vlasic@artistgrp.com</p>
       </div>
+
       <div class="contact-card contact-card--right">
         <h2 class="contact-card__name">Russel Warby</h2>
         <h2 class="contact-card__org">William Morrir Entertainment</h2>
@@ -108,6 +118,7 @@
         <p class="contact-card__pos">UK / EU / AU</p>
         <p class="contact-card__email">RLW@wmeentertainment.com</p>
       </div>
+
     </div>
 
     <div class="copyright">
@@ -115,6 +126,7 @@
       <p class="copyright__text">All Rights Reserved</p>
     </div>
   </footer>
+  <script src='../js/shared.js'></script>
   <script src='../js/shows.js'></script>
 </body>
 </html>
