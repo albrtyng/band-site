@@ -33,14 +33,3 @@ const createElement = (elementType = 'div', classes = [], content = '', src = ''
 
   return element;
 }
-
-/*
-  Converts a Date object to it's string representation MM/DD/YYYY
-*/
-const getDateString = (unix) => {
-  const date = new Date(unix);
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  return `${month > 9 ? '' : '0'}${month}/${day > 9 ? '' : '0'}${day}/${year}`
-}

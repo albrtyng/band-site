@@ -7,14 +7,14 @@ const generateComments = () => {
     commentContainer.removeChild(commentContainer.lastChild);
   }
 
-  axios.get(`https://project-1-api.herokuapp.com/comments?api_key="${API_KEY}"`)
+  axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${API_KEY}`)
   .then(response => {
     const commentsArray = response.data;
     for (let i = commentsArray.length - 1; i >= 0; i--) {
       const author = createElement('div',
         ['comment__author'], commentsArray[i].name);
       const timestamp = createElement('h3',
-        ['comment__timestamp'], getDateString(commentsArray[i].timestamp));
+        ['comment__timestamp'], new Date(commentsArray[i].timestamp).toLocaleDateString('en-ca'));
       const text = createElement('p',
         ['comment__text'], commentsArray[i].comment);
       const img = createElement('img',
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault(); // prevent refresh
 
     axios.post(
-      `https://project-1-api.herokuapp.com/comments?api_key="${API_KEY}"`,
+      `https://project-1-api.herokuapp.com/comments?api_key=${API_KEY}`,
       {
         name: e.target.name.value,
         comment: e.target.comment.value

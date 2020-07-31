@@ -26,7 +26,7 @@ const generateShows = (mode = 'mobile') => {
     showContainer.appendChild(labels);
   }
 
-  axios.get(`https://project-1-api.herokuapp.com/showdates?api_key="${API_KEY}"`)
+  axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${API_KEY}`)
   .then(response => {
     response.data.forEach(show => {
       if (mode === 'mobile') { // Only create the inner labels when mobile
