@@ -1,3 +1,5 @@
+const API_KEY = "ba1ce978-c689-4a47-ad1a-b9313c3c20eb";
+
 /*
   Media queries for generating different layouts
 */
@@ -14,12 +16,12 @@ const desktop = window.matchMedia(
 /*
   creates an HTML element with classname(s), content and src
 */
-const createElement = (elementType, className, content = '', src = '') => {
+const createElement = (elementType = 'div', classes = [], content = '', src = '') => {
   let element = elementType === 'img' && !src
     ? document.createElement('div') // If img src is empty then create a div with same class (grey background)
     : document.createElement(elementType);
-  let classList = className.split(' ');
-  classList.forEach(className => {
+
+  classes.forEach(className => {
     element.classList.add(className);
   });
 
@@ -35,7 +37,8 @@ const createElement = (elementType, className, content = '', src = '') => {
 /*
   Converts a Date object to it's string representation MM/DD/YYYY
 */
-const getDateString = (date) => {
+const getDateString = (unix) => {
+  const date = new Date(unix);
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();

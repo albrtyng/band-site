@@ -1,8 +1,8 @@
-@mixin scale-logo {
+@mixin scale-img ($scale-factor) {
   transition: transform .5s ease-out;
 
   &:hover {
-    transform: scale(1.15);
+    transform: scale($scale-factor);
   }
 }
 

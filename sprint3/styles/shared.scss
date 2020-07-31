@@ -40,7 +40,7 @@ main {
   }
 
   &__logo {
-    @include scale-logo;
+    @include scale-img(1.15);
     display: inline-block;
 
     @include mobile {
